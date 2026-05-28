@@ -1,4 +1,5 @@
-#include <stddef.h>
+#include "libft.h"
+
 void ft_bzero(void *dest, size_t n){
 	unsigned char *ptr;
 
@@ -10,7 +11,7 @@ void ft_bzero(void *dest, size_t n){
 	}
 }
 
-int main(){
+/*int main(){
 	#include <stdio.h>
 	char buffer[11]= "1234512345";
 	char *ptr = buffer;
@@ -20,4 +21,4 @@ int main(){
 	printf("%s", buffer);
 
 	return 0;
-}
+}*/

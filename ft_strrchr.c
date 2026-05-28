@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char *ft_strrchr(char *s, int c){
 	char *p;
 
@@ -14,7 +16,6 @@ char *ft_strrchr(char *s, int c){
 }
 
 int main(){
-	#include <unistd.h>
 	#include <stdio.h>
 	char buffer[6] = "abcdce";
 	char *ptr = buffer + 2;
