@@ -6,7 +6,7 @@ int ft_toupper(int c){
 	return c;
 }
 
-int main(){
+/*int main(){
 	#include <stdio.h>
 	printf("%c", (char)ft_toupper(97));
-}
+}*/
