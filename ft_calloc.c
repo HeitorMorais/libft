@@ -1,4 +1,4 @@
-#include <libft.h>
+#include "libft.h"
 
 void *ft_calloc(size_t n, size_t size){
 	void *p;
@@ -10,7 +10,7 @@ void *ft_calloc(size_t n, size_t size){
 	return p;
 }
 
-int main() 
+/*int main()
 {
  	#include <stdio.h>
     int *ptr;
@@ -26,4 +26,4 @@ int main()
     free(ptr);
     return 0;
 
-}
+}*/

@@ -29,7 +29,7 @@ int	ft_memcmp(void *s1, void *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int	ft_atoi(const char *nptr);
 void	*ft_calloc(size_t n, size_t size);
-// strdup
+char	*ft_strdup(const char *s);
 
 // additional functions
 
@@ -56,7 +56,7 @@ typedef struct	s_list
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int	ft_lstsize(t_list *lst);
-t_list *ft_lstlast(t_list *lst);
-void ft_lstadd_back(t_list **lst, t_list *new);
-
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *)); // n faco a menor ideia
 #endif
