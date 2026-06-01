@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/06/01 19:39:54 by hemorais          #+#    #+#              #
+#    Updated: 2026/06/01 19:39:56 by hemorais         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME    = libft.a
 
 CC      = cc
@@ -5,8 +17,6 @@ CFLAGS  = -Wall -Wextra -Werror
 
 AR      = ar rcs
 
-# Use backslashes (\) to continue the list on the next line.
-# Ensure there are NO spaces after the backslash.
 SRCS    = ft_atoi.c \
           ft_bzero.c \
           ft_calloc.c \
@@ -58,7 +68,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-# Fixed typo here: changed '%c' to '%.c'
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 

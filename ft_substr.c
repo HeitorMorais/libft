@@ -1,28 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:13:58 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:14:07 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len){
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
 	char	*substr;
 	char	*ptr;
 
 	substr = malloc(len * sizeof(char));
-	if(substr == NULL) return NULL;
+	if (substr == NULL)
+		return (NULL);
 	ft_bzero(substr, len);
 	ptr = substr;
-	while(start){
+	while (start)
+	{
 		s++;
 		start--;
 	}
-	while(*s){
+	while (*s)
+	{
 		*ptr += *(char *)s;
 		ptr++;
 		s++;
 	}
-
-	return substr;
+	return (substr);
 }
-
-/*int main(){
-	#include <stdio.h>
-	printf("%s", ft_substr("abcde", 3, 6));
-	return 0;
-}*/

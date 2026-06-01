@@ -1,13 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:09:59 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:10:00 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlen(const char *s){
-	int i;
+size_t	ft_strlen(const char *s)
+{
+	int	i;
 
 	i = 0;
-	while(*s){
+	while (*s)
+	{
 		s++;
 		i++;
 	}
-
-	return i++;
+	return (i++);
 }

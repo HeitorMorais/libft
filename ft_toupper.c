@@ -1,12 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:14:54 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:14:56 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_toupper(int c){
-	if(c >= 'a' || c <= 'z') return c - 32;
-
-	return c;
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
-
-/*int main(){
-	#include <stdio.h>
-	printf("%c", (char)ft_toupper(97));
-}*/

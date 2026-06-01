@@ -1,29 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:08:48 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:08:50 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2){
-	char *s;
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*s;
 	size_t	len;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
 	s = malloc(len * sizeof(char) + 2);
-	if(s == NULL) return NULL;
-	
-	while(*s1){
+	if (s == NULL)
+		return (NULL);
+	while (*s1)
+	{
 		*s = *s1;
 		s++;
 		s1++;
 	}
-	while(*s2){
+	while (*s2)
+	{
 		*s = *s2;
 		s++;
 		s2++;
 	}
 	s -= len;
-	return s;
-}
-
-int main(){
-	#include <stdio.h>
-	printf("%s", ft_strjoin("ab", "cdef"));
-	return 0;
+	return (s);
 }

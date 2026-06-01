@@ -1,24 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:12:55 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:12:56 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strrchr(char *s, int c){
-	char *p;
+char	*ft_strrchr(char *s, int c)
+{
+	char	*p;
 
 	p = NULL;
-	while(*s){
-		if(*s == c){
+	while (*s)
+	{
+		if (*s == (unsigned char) c)
+		{
 			p = s;
 		}
 		s++;
 	}
-	if(c == 0) p = s;
-
-	return p;
-}
-
-int main(){
-	#include <stdio.h>
-	char buffer[6] = "abcdce";
-	char *ptr = buffer + 2;
-	printf("esse tem que ser duas posições depois do debaixo: %p\n", ft_strrchr(buffer, 'c'));
-	printf("%p", ptr);
+	if ((unsigned char)c == 0)
+		p = s;
+	return (p);
 }

@@ -1,13 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 16:32:04 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 16:32:06 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isalnum(char c){
-	if(ft_isalpha(c) || ft_isdigit(c)) return 1;
-	return 0;
-}
-
-int main(){
-	#include <stdio.h>
-
-	printf("%d", ft_isalnum(2));
-	return 0;
+int	ft_isalnum(char c)
+{
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

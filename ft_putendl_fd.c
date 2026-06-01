@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:01:05 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:01:06 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd){
+void	ft_putendl_fd(char *s, int fd)
+{
 	write(fd, s, ft_strlen(s));
 	write(fd, &"\n", 1);
 }
-
-int main(){ ft_putendl_fd("abscwji", 1); }

@@ -1,26 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:09:42 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:09:43 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size){
-	int	n;
-	
-	if(!src || size == 0) return 0;
-	n = 0;
-	while(*src && size > 0){
-		*dest = *src;
-		dest++;
-		src++;	
-		n++;
-		size--;
-	} 
-	*dest = '\0';
-	return n;
-}
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t	src_len;
+	size_t	i;
 
-int main(){
-	#include <stdio.h>
-
-	char buffer[6] = "abcde";
-	char buffer2[8] = "fghijkl";
-	ft_strlcpy(buffer, buffer2, 7);
-	printf("1: %s, 2: %s",buffer, buffer2);
+	src_len = ft_strlen(src);
+	if (size == 0)
+		return (src_len);
+	i = 0;
+	while (src[i] && i < (size - 1))
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (src_len);
 }

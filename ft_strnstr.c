@@ -1,45 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:12:37 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:12:38 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strnstr(const char *s1, const char *s2, size_t n){
-	char *p;
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+	size_t	j;
 
-	if(!*s2) return (char *)s1;
-	p = 0;
-	while(n){
-		if(*s2 == *s1){
-			p = (char *)s1;
-			while(n && *s2 == *s1){
-				s1++;
-				s2++;
-				n--;
-			}
-
-			if(!*s2){
-				return p;
-			} else {
-				p = 0;
-				return p;
-			}
+	if (*s2 == '\0')
+		return ((char *)s1);
+	i = 0;
+	while (s1[i] && i < n)
+	{
+		j = 0;
+		while (s1[i + j] == s2[j] && (i + j) < n)
+		{
+			if (s2[j + 1] == '\0')
+				return ((char *)&s1[i]);
+			j++;
 		}
-		s1++;
-		n--;
+		i++;
 	}
-
-	return p;
-}
-int main(){
-	#include <stdio.h>
-	#include <unistd.h>
-	const char	*largestring = "Foo Bar	Baz";
-	const char	*smallstring = "Bar";
-	char *ptr;
-
-	ptr = ft_strnstr(largestring, smallstring, 5);
-	printf("%p\n", ptr);
-	ptr = ft_strnstr(largestring, smallstring, 7);
-	while(*ptr){
-		write(1, ptr, 1);
-		ptr++;
-	}
-
+	return (NULL);
 }

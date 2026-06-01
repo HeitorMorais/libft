@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:02:37 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:02:53 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd){
+void	ft_putstr_fd(char *s, int fd)
+{
 	write(fd, s, ft_strlen(s));
 }
-
-int main(){ ft_putstr_fd("abscwji", 1); }

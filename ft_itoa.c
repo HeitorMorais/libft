@@ -1,57 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 16:38:10 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 16:38:14 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_itoa(int n){
-	char	*str;
-	char	*ptr_str;
+static int	get_len(int n)
+{
 	int	len;
-	long	n_copy;
 
-	if(n == 0) return "0";
-
-	len = 1;
-	n_copy = n;
-
-	if(n < 0) n_copy *= -1;
-	while(n_copy >= 10){
+	len = 0;
+	if (n <= 0)
 		len++;
-		n_copy /= 10;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
 	}
-	str = malloc(len + 2);
-	if(!str) return NULL;
-
-	ptr_str = str;
-	if(n < 0){
-		n_copy = n * -1;
-		*ptr_str = '-';
-		ptr_str++;
-	}
-	else {
-		n_copy = n;
-	}
-	while(len){
-		ptr_str++;
-		len--;
-	}
-
-	*ptr_str = '\0';
-	
-	while(n_copy > 0){
-		ptr_str--;
-		*ptr_str = (n_copy % 10) + 48;
-		n_copy /= 10;
-	}
-	return str;
+	return (len);
 }
 
-/*int main(){
-	#include <stdio.h>
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(5));
-	printf("%s\n", ft_itoa(505));
-	printf("%s\n", ft_itoa(-473));
-	printf("%s\n", ft_itoa(1000));
-	printf("%s\n", ft_itoa(2147483647));
-	printf("%s\n", ft_itoa(-214748));
-	printf("%s\n", ft_itoa(-2147483647));
-	return 0;
-}*/
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		len;
+	long	nbr;
+
+	nbr = n;
+	len = get_len(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (nbr == 0)
+		str[0] = '0';
+	if (nbr < 0)
+	{
+		str[0] = '-';
+		nbr = -nbr;
+	}
+	while (nbr > 0)
+	{
+		str[len - 1] = (nbr % 10) + '0';
+		nbr /= 10;
+		len--;
+	}
+	return (str);
+}

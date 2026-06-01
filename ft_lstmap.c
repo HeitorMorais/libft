@@ -1,24 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 16:53:54 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 16:53:57 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*)){
-	t_list *current;
-	t_list *head;
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*current;
+	t_list	*head;
 
 	head = lst;
 	current = lst;
-	
-	if(!lst || !f) return NULL;
-
-	while(current){
+	if (!lst || !f)
+		return (NULL);
+	while (current)
+	{
 		f(current->content);
-		if(*(char *)(current->content) < 97 && *(char *)(current->content) > 122) del(current->content);
-	 	current = current->next;
+		if (*(char *)(current->content) < 97
+			&& *(char *)(current->content) > 122)
+			del(current->content);
+		current = current->next;
 	}
-
-	return head;
+	return (head);
 }
 /*
-int main(){
+int	main(void){
 	#include <stdio.h>
 	char str1[] = "abcd";
 	char str2[] = "Gfgh";
@@ -26,10 +40,10 @@ int main(){
 	t_list *node2 = ft_lstnew(str2);
 
 	ft_lstadd_back(&node1, node2);
-	
+
 	ft_lstmap(node1, up, del);
 
 	printf("%s, %s", (char *)node1->content, (char *)node2->content);
 
-	return 0;	
+	return (0);
 }*/

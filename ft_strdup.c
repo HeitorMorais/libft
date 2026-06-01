@@ -32,13 +32,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-
-/*int	main(void)
-{
-	char	*src;
-
-#include <stdio.h>
-	src = "teste";
-	printf("%s", src);
-	printf("%s", ft_strdup(src));
-}*/

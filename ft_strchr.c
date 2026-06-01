@@ -1,25 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/01 17:07:25 by hemorais          #+#    #+#             */
+/*   Updated: 2026/06/01 17:07:26 by hemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strchr(char *s, int c){
-	char *p;
+char	*ft_strchr(char *s, int c)
+{
+	char	*p;
 
-	while(*s){
-		if(*s == c){
+	while (*s)
+	{
+		if (*s == (unsigned char) c)
+		{
 			p = s;
-			return p;
+			return (p);
 		}
 		s++;
 	}
-	if(c == 0) {
+	if ((unsigned char)c == 0)
+	{
 		p = s;
-	} else {
+	}
+	else
+	{
 		p = NULL;
 	}
-	return p;
-}
-
-int main(){
-	#include <unistd.h>
-	char buffer[6] = "abcde";
-	write(1, ft_strchr(buffer, 'c'), 1);
+	return (p);
 }
