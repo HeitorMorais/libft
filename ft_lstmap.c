@@ -1,13 +1,5 @@
 #include "libft.h"
 
-void	*up(void *content){
-	*(char *)content -= 32;	
-}
-
-void	del(void *content){
-	*(char *)content = '\0';
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*)){
 	t_list *current;
 	t_list *head;
@@ -25,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*)){
 
 	return head;
 }
-
+/*
 int main(){
 	#include <stdio.h>
 	char str1[] = "abcd";
@@ -40,4 +32,4 @@ int main(){
 	printf("%s, %s", (char *)node1->content, (char *)node2->content);
 
 	return 0;	
-}
+}*/

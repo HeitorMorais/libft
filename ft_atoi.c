@@ -1,12 +1,12 @@
 #include "libft.h"
 
-int is_valid(char c){
+static int	is_valid(char c){
 	return (c >= '0' && c <= '9') || c == '-' || c == '+';
 }
 
 int ft_atoi(const char *nptr){
 	int sign = 1;
-	int number = 0;
+	long number = 0;
 
 	while(*nptr == ' ') nptr++;
 	

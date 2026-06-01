@@ -15,7 +15,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len){
 	while(*s){
 		*ptr += *(char *)s;
 		ptr++;
-		(char *)s++;
+		s++;
 	}
 
 	return substr;

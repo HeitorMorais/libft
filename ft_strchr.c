@@ -13,7 +13,7 @@ char *ft_strchr(char *s, int c){
 	if(c == 0) {
 		p = s;
 	} else {
-		p = '\0';
+		p = NULL;
 	}
 	return p;
 }

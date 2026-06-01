@@ -3,7 +3,7 @@
 char *ft_strrchr(char *s, int c){
 	char *p;
 
-	p = '\0';
+	p = NULL;
 	while(*s){
 		if(*s == c){
 			p = s;
