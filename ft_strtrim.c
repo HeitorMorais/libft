@@ -36,6 +36,6 @@ char *ft_strtrim(char const *s1, char const *set){
 
 int main(){
 	#include <stdio.h>
-	printf("%s", ft_strtrim("abcdefgh   ", "  "));
+	printf("%s", ft_strtrim(" abcdefgh ", " "));
 	return 0;
 }
