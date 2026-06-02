@@ -21,6 +21,6 @@ void	*ft_calloc(size_t n, size_t size)
 	{
 		return (NULL);
 	}
-	ft_bzero(p, n);
+	ft_bzero(p, n * size);
 	return (p);
 }
