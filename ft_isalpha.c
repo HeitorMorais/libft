@@ -6,15 +6,15 @@
 /*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:33:02 by hemorais          #+#    #+#             */
-/*   Updated: 2026/06/01 16:33:04 by hemorais         ###   ########.fr       */
+/*   Updated: 2026/06/08 18:16:00 by hemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	if ((c < 65 || c > 90) && (c < 97 || c > 122))
+		return (0);
+	return (1);
 }

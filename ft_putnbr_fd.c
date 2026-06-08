@@ -6,7 +6,7 @@
 /*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:02:04 by hemorais          #+#    #+#             */
-/*   Updated: 2026/06/01 17:02:05 by hemorais         ###   ########.fr       */
+/*   Updated: 2026/06/08 17:02:45 by hemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	char	digit;
 
-	str = ft_itoa(n);
-	if (!str)
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
 		return ;
-	write(fd, str, ft_strlen(str));
-	free(str);
+	}
+	if (n < 0)
+	{
+		write(fd, &"-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	digit = (n % 10) + '0';
+	write(fd, &digit, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 17:15:45 by hemorais          #+#    #+#             */
-/*   Updated: 2026/06/01 17:15:47 by hemorais         ###   ########.fr       */
+/*   Updated: 2026/06/08 18:29:20 by hemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int					ft_isalpha(char c);
-int					ft_isdigit(char c);
-int					ft_isalnum(char c);
+int					ft_isalpha(int c);
+int					ft_isdigit(int c);
+int					ft_isalnum(int c);
 int					ft_isascii(int c);
-int					ft_isprint(char c);
+int					ft_isprint(int c);
 size_t				ft_strlen(const char *s);
 void				*ft_memset(void *dest, int c, size_t n);
 void				ft_bzero(void *dest, size_t n);
