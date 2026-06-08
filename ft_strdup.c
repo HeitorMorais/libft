@@ -6,7 +6,7 @@
 /*   By: hemorais <hemorais@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 18:11:50 by hemorais          #+#    #+#             */
-/*   Updated: 2026/05/28 18:56:40 by hemorais         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:36:39 by hemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s)
 		i++;
 	}
 	dup = malloc(i * sizeof(char) + 1);
+	if (!dup)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
