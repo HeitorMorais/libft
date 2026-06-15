@@ -12,38 +12,31 @@
 
 #include "libft.h"
 
+static t_list	*fail(t_list *new, void(*del)(void *))
+{
+	ft_lstclear(&new, del);
+	return (NULL);
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*current;
-	t_list	*head;
-
-	head = lst;
-	current = lst;
-	if (!lst || !f)
+	t_list	*new;
+	void	*cont_temp;
+	t_list	*new_temp;
+	if (!lst || !f || !del)
 		return (NULL);
-	while (current)
+	new = NULL;
+	while (lst)
 	{
-		f(current->content);
-		if (*(char *)(current->content) < 97
-			&& *(char *)(current->content) > 122)
-			del(current->content);
-		current = current->next;
+		cont_temp = f(lst->content);
+		if(!cont_temp)
+			return fail(new, del);
+		new_temp = ft_lstnew(cont_temp);
+		if(!new_temp)
+			return fail(new, del);
+		ft_lstadd_back(&new, new_temp);
+		lst = lst->next;
 	}
-	return (head);
+	return (new);
 }
-/*
-int	main(void){
-	#include <stdio.h>
-	char str1[] = "abcd";
-	char str2[] = "Gfgh";
-	t_list *node1 = ft_lstnew(str1);
-	t_list *node2 = ft_lstnew(str2);
 
-	ft_lstadd_back(&node1, node2);
-
-	ft_lstmap(node1, up, del);
-
-	printf("%s, %s", (char *)node1->content, (char *)node2->content);
-
-	return (0);
-}*/
